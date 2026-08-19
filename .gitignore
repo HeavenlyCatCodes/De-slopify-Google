@@ -8,3 +8,5 @@ desktop.ini
 *.pem
 *.zip
 dist/
+!packages/
+!packages/**
