@@ -8,6 +8,10 @@ const stamp = document.getElementById("statusCard");
 const stampLabel = document.getElementById("stampLabel");
 const stampCopy = document.getElementById("stampCopy");
 const toggleText = document.getElementById("toggleText");
+const badgeText = document.getElementById("badgeText");
+const searchState = document.getElementById("searchState");
+const workspaceState = document.getElementById("workspaceState");
+const youtubeState = document.getElementById("youtubeState");
 
 function storageGet(defaults) {
   return new Promise((resolve) => {
@@ -35,11 +39,18 @@ function render(on, searchOn, workspaceOn, youtubeOn) {
   workspaceToggle.checked = workspaceOn;
   youtubeToggle.checked = youtubeOn;
   stamp.classList.toggle("is-off", !on);
-  stampLabel.textContent = on ? "Slop off" : "Slop allowed";
+  badgeText.textContent = on ? "ON" : "OFF";
+  stampLabel.textContent = on ? "Hiding Gemini" : "Not hiding";
   stampCopy.textContent = on
-    ? "Gemini buttons and AI Overviews stay stripped on Google Search and Workspace."
+    ? "AI Overviews, Ask Gemini, and Help me write stay stripped."
     : "Google can show Gemini and AI Overviews again.";
-  toggleText.textContent = on ? "On" : "Off";
+  toggleText.textContent = on ? "Turn off" : "Turn on";
+  searchState.textContent = searchOn ? "On" : "Off";
+  workspaceState.textContent = workspaceOn ? "On" : "Off";
+  youtubeState.textContent = youtubeOn ? "On" : "Off";
+  searchState.classList.toggle("is-off", !searchOn);
+  workspaceState.classList.toggle("is-off", !workspaceOn);
+  youtubeState.classList.toggle("is-off", !youtubeOn);
 }
 
 const defaults = {

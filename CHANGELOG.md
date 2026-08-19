@@ -1,0 +1,16 @@
+# Changelog
+
+All notable changes to De-slopify are listed here.
+
+## [1.0.0] — 2026-08-19
+
+### Added
+
+- First Chrome and Firefox release.
+- Hides Google Search **AI Overviews** and the **AI Mode** tab.
+- Hides Gemini in Gmail, Docs, Drive, Calendar, and Meet (Ask Gemini, Help me write, summarize, Refine, bottom bar).
+- Hides YouTube Gemini chips and AI summaries.
+- Toolbar popup with a clear **ON / OFF** status and separate Search, Workspace, and YouTube switches.
+- Leaves [gemini.google.com](https://gemini.google.com) alone.
+
+[1.0.0]: https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/tag/v1.0.0

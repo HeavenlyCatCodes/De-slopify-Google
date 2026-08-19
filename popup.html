@@ -16,14 +16,18 @@
     </header>
 
     <section class="stamp" id="statusCard">
-      <p class="stamp-label" id="stampLabel">Slop off</p>
+      <div class="badge" id="badge" aria-live="polite">
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span id="badgeText">ON</span>
+      </div>
+      <p class="stamp-label" id="stampLabel">Hiding Gemini</p>
       <p class="stamp-copy" id="stampCopy">
-        Gemini buttons and AI Overviews stay stripped on Google Search and Workspace.
+        AI Overviews, Ask Gemini, and Help me write stay stripped.
       </p>
       <label class="switch">
         <input type="checkbox" id="toggle" checked />
         <span class="track" aria-hidden="true"></span>
-        <span class="switch-text" id="toggleText">On</span>
+        <span class="switch-text" id="toggleText">Turn off</span>
       </label>
     </section>
 
@@ -32,9 +36,12 @@
         <span class="opt-title">Search</span>
         <span class="opt-copy">AI Overviews and the AI Mode tab</span>
       </span>
-      <span class="opt-switch">
-        <input type="checkbox" id="searchToggle" checked />
-        <span class="track" aria-hidden="true"></span>
+      <span class="opt-control">
+        <span class="opt-state" id="searchState">On</span>
+        <span class="opt-switch">
+          <input type="checkbox" id="searchToggle" checked />
+          <span class="track" aria-hidden="true"></span>
+        </span>
       </span>
     </label>
 
@@ -43,9 +50,12 @@
         <span class="opt-title">Workspace</span>
         <span class="opt-copy">Gemini in Gmail, Docs, Drive, Meet</span>
       </span>
-      <span class="opt-switch">
-        <input type="checkbox" id="workspaceToggle" checked />
-        <span class="track" aria-hidden="true"></span>
+      <span class="opt-control">
+        <span class="opt-state" id="workspaceState">On</span>
+        <span class="opt-switch">
+          <input type="checkbox" id="workspaceToggle" checked />
+          <span class="track" aria-hidden="true"></span>
+        </span>
       </span>
     </label>
 
@@ -54,9 +64,12 @@
         <span class="opt-title">YouTube</span>
         <span class="opt-copy">Gemini chips and AI summaries</span>
       </span>
-      <span class="opt-switch">
-        <input type="checkbox" id="youtubeToggle" checked />
-        <span class="track" aria-hidden="true"></span>
+      <span class="opt-control">
+        <span class="opt-state" id="youtubeState">On</span>
+        <span class="opt-switch">
+          <input type="checkbox" id="youtubeToggle" checked />
+          <span class="track" aria-hidden="true"></span>
+        </span>
       </span>
     </label>
 

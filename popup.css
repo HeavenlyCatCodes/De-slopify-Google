@@ -5,7 +5,9 @@
   --mute: #8a8378;
   --line: #3a342c;
   --strike: #d64532;
-  --ok: #c8b48a;
+  --go: #2f9e6a;
+  --go-ink: #d7f5e6;
+  --stop: #6b645c;
 }
 
 * {
@@ -56,37 +58,77 @@ h1 {
 }
 
 .stamp {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 0;
+  background: #1c2a22;
+  border: 1px solid #2f6b4c;
   padding: 14px 14px 12px;
   position: relative;
+}
+
+.stamp.is-off {
+  background: #2a2420;
+  border-color: var(--line);
 }
 
 .stamp::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
-  width: 3px;
-  background: var(--strike);
+  width: 4px;
+  background: var(--go);
 }
 
 .stamp.is-off::before {
-  background: var(--mute);
+  background: var(--stop);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  background: var(--go);
+  color: #062214;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.stamp.is-off .badge {
+  background: #4a433c;
+  color: var(--bone);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #062214;
+  box-shadow: 0 0 0 3px rgba(6, 34, 20, 0.25);
+}
+
+.stamp.is-off .badge-dot {
+  background: #c8bfb3;
+  box-shadow: none;
 }
 
 .stamp-label {
   font-family: "Iowan Old Style", Palatino, serif;
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: 0.01em;
-  line-height: 1;
-  margin-bottom: 8px;
+  line-height: 1.15;
+  margin-bottom: 6px;
 }
 
 .stamp-copy {
-  color: var(--mute);
+  color: #b7cfc2;
   font-size: 12px;
   margin-bottom: 12px;
+}
+
+.stamp.is-off .stamp-copy {
+  color: var(--mute);
 }
 
 .switch {
@@ -106,12 +148,13 @@ h1 {
 }
 
 .track {
-  width: 36px;
-  height: 20px;
+  width: 44px;
+  height: 24px;
   border-radius: 999px;
   background: #3a342c;
   position: relative;
   flex: none;
+  border: 1px solid #5a534a;
 }
 
 .track::after {
@@ -119,21 +162,26 @@ h1 {
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: var(--bone);
   transition: transform 0.15s ease;
 }
 
-.switch input:checked + .track,
+.switch input:checked + .track {
+  background: var(--go);
+  border-color: #1f7a50;
+}
+
 .opt-switch input:checked + .track {
-  background: var(--strike);
+  background: var(--go);
+  border-color: #1f7a50;
 }
 
 .switch input:checked + .track::after,
 .opt-switch input:checked + .track::after {
-  transform: translateX(16px);
+  transform: translateX(20px);
 }
 
 .switch input:focus-visible + .track,
@@ -144,9 +192,9 @@ h1 {
 
 .switch-text {
   font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ok);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--go-ink);
 }
 
 .stamp.is-off .switch-text {
@@ -187,11 +235,32 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.opt-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+.opt-state {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--go);
+  min-width: 2.2em;
+  text-align: right;
+}
+
+.opt-state.is-off {
+  color: var(--mute);
+}
+
 .opt-switch {
   position: relative;
-  flex: 0 0 36px;
-  width: 36px;
-  height: 20px;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 24px;
 }
 
 .note {

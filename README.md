@@ -6,6 +6,13 @@ De-slopify is a free Chrome and Firefox extension that hides Google’s AI chrom
 
 It does **not** open or blank [gemini.google.com](https://gemini.google.com). That site is the Gemini app. This extension only removes Gemini *integration* from the rest of Google.
 
+[Download the latest release](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/latest)
+
+| Browser | Zip |
+| --- | --- |
+| Chrome, Edge, Brave, Arc | [de-slopify-chrome-1.0.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.0.0/de-slopify-chrome-1.0.0.zip) |
+| Firefox | [de-slopify-firefox-1.0.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.0.0/de-slopify-firefox-1.0.0.zip) |
+
 ## What it removes
 
 **Google Search**
@@ -30,19 +37,22 @@ Comment buttons, emoji reactions, and normal search results stay.
 
 ## Install on Chrome, Edge, Brave, or Arc
 
-1. Open `chrome://extensions` (or `edge://extensions`).
-2. Turn on **Developer mode**.
-3. Click **Load unpacked**.
-4. Select the `De-slopify` folder (the one with `manifest.json`).
-5. Open [google.com](https://www.google.com) or [mail.google.com](https://mail.google.com).
+1. Download [de-slopify-chrome-1.0.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.0.0/de-slopify-chrome-1.0.0.zip).
+2. Unzip it to a folder you will keep.
+3. Open `chrome://extensions` (or `edge://extensions`).
+4. Turn on **Developer mode**.
+5. Click **Load unpacked**.
+6. Select the unzipped folder (the one with `manifest.json`).
+7. Open [google.com](https://www.google.com) or [mail.google.com](https://mail.google.com).
 
 Incognito: extension **Details** → **Allow in Incognito**.
 
 ## Install on Firefox
 
-1. Open `about:debugging#/runtime/this-firefox`.
-2. Click **Load Temporary Add-on…**.
-3. Choose `manifest.json` in this folder.
+1. Download [de-slopify-firefox-1.0.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.0.0/de-slopify-firefox-1.0.0.zip).
+2. Open `about:debugging#/runtime/this-firefox`.
+3. Click **Load Temporary Add-on…**.
+4. Choose the zip, or unzip it and choose `manifest.json`.
 
 Firefox drops temporary add-ons when you quit. Load the folder again after a restart.
 
@@ -50,7 +60,7 @@ Firefox drops temporary add-ons when you quit. Load the folder again after a res
 
 Click the **De-slopify** icon.
 
-- **Slop off** — master switch
+- **ON / OFF** — master switch (green badge when hiding, gray when not)
 - **Search** — AI Overviews and AI Mode
 - **Workspace** — Gemini in Gmail / Docs / Drive
 - **YouTube** — Gemini chips and AI summaries
@@ -67,6 +77,10 @@ powershell -File scripts\pack.ps1
 ```
 
 Writes `dist/de-slopify-chrome-1.0.0.zip` and `dist/de-slopify-firefox-1.0.0.zip`.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
