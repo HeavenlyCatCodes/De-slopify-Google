@@ -2,6 +2,15 @@
 
 All notable changes to De-slopify are listed here.
 
+## [1.1.1] — 2026-08-19
+
+### Fixed
+
+- Firefox Add-ons package uses POSIX paths (`icons/icon128.png`) so AMO validation accepts it.
+- Raised minimum Firefox to 140 and Firefox for Android to 142 so `data_collection_permissions` is valid.
+
+[1.1.1]: https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/tag/v1.1.1
+
 ## [1.1.0] — 2026-08-19
 
 ### Added
