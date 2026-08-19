@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    html, body { margin: 0; width: 1280px; height: 800px; }
+    body {
+      background: #0e0c0a;
+      font-family: "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+      color: #f3efe6;
+    }
+    .stage {
+      width: 1280px; height: 800px;
+      display: flex; align-items: center; justify-content: center; gap: 64px;
+      background:
+        radial-gradient(ellipse at 20% 10%, #2a221c 0%, transparent 50%),
+        #0e0c0a;
+    }
+    .copy { width: 420px; }
+    .kicker {
+      letter-spacing: 0.2em; text-transform: uppercase; color: #8a8378;
+      font-size: 13px; margin-bottom: 12px;
+    }
+    h1 {
+      font-family: "Iowan Old Style", Palatino, serif;
+      font-size: 52px; font-weight: 600; letter-spacing: -0.03em;
+      margin: 0 0 16px; line-height: 1.05;
+    }
+    p { color: #b7b0a6; font-size: 18px; line-height: 1.45; margin: 0; }
+    .card {
+      width: 320px;
+      background: #161411;
+      border: 1px solid #3a342c;
+      padding: 16px 16px 14px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+    }
+    .mast { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .mark { width: 28px; height: 28px; border-radius: 7px; display: block; }
+    .eyebrow { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8378; }
+    .name { font-family: Palatino, serif; font-size: 22px; letter-spacing: -0.03em; }
+    .stamp { background: #1c2a22; border: 1px solid #2f6b4c; padding: 14px 14px 12px; position: relative; }
+    .stamp::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #2f9e6a; }
+    .badge { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 8px; padding: 4px 10px 4px 8px; border-radius: 999px; background: #2f9e6a; color: #062214; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #062214; }
+    .stamp-label { font-family: Palatino, serif; font-size: 20px; margin: 0 0 6px; }
+    .stamp-copy { color: #b7cfc2; font-size: 12px; margin: 0 0 12px; }
+    .switch { display: flex; align-items: center; gap: 10px; }
+    .track { width: 44px; height: 24px; border-radius: 999px; background: #2f9e6a; border: 1px solid #1f7a50; position: relative; }
+    .track::after { content: ""; position: absolute; top: 2px; left: 22px; width: 18px; height: 18px; border-radius: 50%; background: #f3efe6; }
+    .switch-text { font-size: 12px; font-weight: 600; color: #d7f5e6; }
+    .opt { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding: 10px 12px; background: #211e1a; border: 1px solid #3a342c; }
+    .stamp + .opt { margin-top: 12px; }
+    .opt-title { font-size: 13px; }
+    .opt-copy { font-size: 11px; color: #8a8378; margin-top: 2px; }
+    .opt-control { display: flex; align-items: center; gap: 8px; }
+    .on { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2f9e6a; }
+    .mini { width: 44px; height: 24px; border-radius: 999px; background: #2f9e6a; border: 1px solid #1f7a50; position: relative; }
+    .mini::after { content: ""; position: absolute; top: 2px; left: 22px; width: 18px; height: 18px; border-radius: 50%; background: #f3efe6; }
+    .note { font-size: 11px; color: #8a8378; border-top: 1px solid #3a342c; margin-top: 12px; padding-top: 10px; }
+    .note strong { color: #f3efe6; }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="copy">
+      <div class="kicker">Firefox add-on</div>
+      <h1>De-slopify</h1>
+      <p>Strip Gemini and AI Overviews off Search, Gmail, Docs, Drive, and YouTube. One switch. Clearly on.</p>
+    </div>
+    <div class="card">
+      <div class="mast">
+        <img class="mark" src="../../icons/icon48.png" alt="" />
+        <div>
+          <div class="eyebrow">google properties</div>
+          <div class="name">De-slopify</div>
+        </div>
+      </div>
+      <div class="stamp">
+        <div class="badge"><span class="dot"></span>ON</div>
+        <p class="stamp-label">Hiding Gemini</p>
+        <p class="stamp-copy">AI Overviews, Ask Gemini, and Help me write stay stripped.</p>
+        <div class="switch">
+          <span class="track"></span>
+          <span class="switch-text">Turn off</span>
+        </div>
+      </div>
+      <div class="opt">
+        <div><div class="opt-title">Search</div><div class="opt-copy">AI Overviews and the AI Mode tab</div></div>
+        <div class="opt-control"><span class="on">On</span><span class="mini"></span></div>
+      </div>
+      <div class="opt">
+        <div><div class="opt-title">Workspace</div><div class="opt-copy">Gemini in Gmail, Docs, Drive, Meet</div></div>
+        <div class="opt-control"><span class="on">On</span><span class="mini"></span></div>
+      </div>
+      <div class="opt">
+        <div><div class="opt-title">YouTube</div><div class="opt-copy">Gemini chips and AI summaries</div></div>
+        <div class="opt-control"><span class="on">On</span><span class="mini"></span></div>
+      </div>
+      <p class="note">Leaves <strong>gemini.google.com</strong> alone. That tab is the product, not an overlay.</p>
+    </div>
+  </div>
+</body>
+</html>
