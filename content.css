@@ -1,0 +1,57 @@
+/* Instant hide. Toggles flip html.dslop-* classes. */
+
+html.dslop-off .YzCcne,
+html.dslop-off .Beswgc {
+  display: revert !important;
+}
+
+/* Search — AI Overviews and AI Mode */
+html:not(.dslop-off):not(.dslop-search-off) .YzCcne,
+html:not(.dslop-off):not(.dslop-search-off) .Beswgc,
+html:not(.dslop-off):not(.dslop-search-off) [data-attrid="AIOverview"],
+html:not(.dslop-off):not(.dslop-search-off) [data-async-type="folsrch"],
+html:not(.dslop-off):not(.dslop-search-off) div.ULSxyf:has(a[href*="p=ai_overviews"]),
+html:not(.dslop-off):not(.dslop-search-off) div.MjjYud:has(a[href*="p=ai_overviews"]),
+html:not(.dslop-off):not(.dslop-search-off) #rso div:has(> div a[href^="https://support.google.com/websearch?p=ai_overviews"]),
+html:not(.dslop-off):not(.dslop-search-off) #kp-wp-tab-overview > div:first-child:has(a[href*="p=ai_overviews"]),
+html:not(.dslop-off):not(.dslop-search-off) [role="navigation"] [role="listitem"]:has([href*="udm=50"]),
+html:not(.dslop-off):not(.dslop-search-off) a[href*="udm=50"],
+html:not(.dslop-off):not(.dslop-search-off) [aria-label="AI Mode"],
+html:not(.dslop-off):not(.dslop-search-off) [aria-label="AI Overview"],
+html:not(.dslop-off):not(.dslop-search-off) .dslop-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Workspace — Gmail, Docs, Drive, Calendar, Meet */
+html:not(.dslop-off):not(.dslop-workspace-off) .appsElementsSidekickEntryPointRoot,
+html:not(.dslop-off):not(.dslop-workspace-off) .appsElementsSidekickAuroraEntryPointRoot,
+html:not(.dslop-off):not(.dslop-workspace-off) #docs-sidekick-gen-ai-promo-button-container,
+html:not(.dslop-off):not(.dslop-workspace-off) #docs-instant-bubble,
+html:not(.dslop-off):not(.dslop-workspace-off) .kixWizBarkickWrapper,
+html:not(.dslop-off):not(.dslop-workspace-off) [aria-label="Ask Gemini"],
+html:not(.dslop-off):not(.dslop-workspace-off) [aria-label="Gemini"],
+html:not(.dslop-off):not(.dslop-workspace-off) [aria-label*="Ask Gemini"],
+html:not(.dslop-off):not(.dslop-workspace-off) [data-tooltip="Ask Gemini"],
+html:not(.dslop-off):not(.dslop-workspace-off) [data-tooltip="Gemini"],
+html:not(.dslop-off):not(.dslop-workspace-off) [aria-label="Help me write"],
+html:not(.dslop-off):not(.dslop-workspace-off) [data-tooltip="Help me write"],
+html:not(.dslop-off):not(.dslop-workspace-off) [aria-label="Help me write with Gemini"],
+html:not(.dslop-off):not(.dslop-workspace-off) [aria-label="Summarize this email"],
+html:not(.dslop-off):not(.dslop-workspace-off) [aria-label*="Gemini side panel"],
+html:not(.dslop-off):not(.dslop-workspace-off) [aria-label="Open Gemini"],
+html:not(.dslop-off):not(.dslop-workspace-off) .dslop-ws-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* YouTube experimental Gemini / AI summary chips */
+html:not(.dslop-off):not(.dslop-youtube-off) ytd-info-panel-content-renderer:has([aria-label*="Gemini"]),
+html:not(.dslop-off):not(.dslop-youtube-off) [aria-label*="Gemini"],
+html:not(.dslop-off):not(.dslop-youtube-off) .dslop-yt-hidden {
+  display: none !important;
+}

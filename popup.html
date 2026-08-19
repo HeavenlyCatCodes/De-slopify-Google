@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>De-slopify</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="mast">
+      <img class="mark" src="icons/icon48.png" alt="" width="28" height="28" />
+      <div>
+        <p class="eyebrow">google properties</p>
+        <h1>De-slopify</h1>
+      </div>
+    </header>
+
+    <section class="stamp" id="statusCard">
+      <p class="stamp-label" id="stampLabel">Slop off</p>
+      <p class="stamp-copy" id="stampCopy">
+        Gemini buttons and AI Overviews stay stripped on Google Search and Workspace.
+      </p>
+      <label class="switch">
+        <input type="checkbox" id="toggle" checked />
+        <span class="track" aria-hidden="true"></span>
+        <span class="switch-text" id="toggleText">On</span>
+      </label>
+    </section>
+
+    <label class="opt" for="searchToggle">
+      <span>
+        <span class="opt-title">Search</span>
+        <span class="opt-copy">AI Overviews and the AI Mode tab</span>
+      </span>
+      <span class="opt-switch">
+        <input type="checkbox" id="searchToggle" checked />
+        <span class="track" aria-hidden="true"></span>
+      </span>
+    </label>
+
+    <label class="opt" for="workspaceToggle">
+      <span>
+        <span class="opt-title">Workspace</span>
+        <span class="opt-copy">Gemini in Gmail, Docs, Drive, Meet</span>
+      </span>
+      <span class="opt-switch">
+        <input type="checkbox" id="workspaceToggle" checked />
+        <span class="track" aria-hidden="true"></span>
+      </span>
+    </label>
+
+    <label class="opt" for="youtubeToggle">
+      <span>
+        <span class="opt-title">YouTube</span>
+        <span class="opt-copy">Gemini chips and AI summaries</span>
+      </span>
+      <span class="opt-switch">
+        <input type="checkbox" id="youtubeToggle" checked />
+        <span class="track" aria-hidden="true"></span>
+      </span>
+    </label>
+
+    <p class="note">Leaves <strong>gemini.google.com</strong> alone. That tab is the product, not an overlay.</p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

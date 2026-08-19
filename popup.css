@@ -1,0 +1,208 @@
+:root {
+  --bone: #f3efe6;
+  --soot: #161411;
+  --panel: #211e1a;
+  --mute: #8a8378;
+  --line: #3a342c;
+  --strike: #d64532;
+  --ok: #c8b48a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 320px;
+  max-width: 320px;
+  overflow-x: hidden;
+  background: var(--soot);
+  color: var(--bone);
+  font: 13px/1.45 "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+}
+
+body {
+  padding: 16px 16px 14px;
+}
+
+.mast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mark {
+  border-radius: 7px;
+  display: block;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+h1 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.stamp {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 14px 14px 12px;
+  position: relative;
+}
+
+.stamp::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--strike);
+}
+
+.stamp.is-off::before {
+  background: var(--mute);
+}
+
+.stamp-label {
+  font-family: "Iowan Old Style", Palatino, serif;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stamp-copy {
+  color: var(--mute);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch input,
+.opt-switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.track {
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: #3a342c;
+  position: relative;
+  flex: none;
+}
+
+.track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bone);
+  transition: transform 0.15s ease;
+}
+
+.switch input:checked + .track,
+.opt-switch input:checked + .track {
+  background: var(--strike);
+}
+
+.switch input:checked + .track::after,
+.opt-switch input:checked + .track::after {
+  transform: translateX(16px);
+}
+
+.switch input:focus-visible + .track,
+.opt-switch input:focus-visible + .track {
+  outline: 2px solid var(--bone);
+  outline-offset: 2px;
+}
+
+.switch-text {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ok);
+}
+
+.stamp.is-off .switch-text {
+  color: var(--mute);
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.stamp + .opt {
+  margin-top: 12px;
+}
+
+.opt > span:first-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.opt-title {
+  display: block;
+  font-size: 13px;
+}
+
+.opt-copy {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--mute);
+  overflow-wrap: anywhere;
+}
+
+.opt-switch {
+  position: relative;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 20px;
+}
+
+.note {
+  font-size: 11px;
+  color: var(--mute);
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 10px;
+}
+
+.note strong {
+  color: var(--bone);
+  font-weight: 600;
+}
