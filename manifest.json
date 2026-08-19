@@ -1,7 +1,9 @@
 {
   "manifest_version": 3,
   "name": "De-slopify",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "author": "HeavenlyCatCodes",
+  "homepage_url": "https://github.com/HeavenlyCatCodes/De-slopify-Google",
   "description": "Removes Gemini buttons, AI Overviews, and other AI chrome from Google Search, Gmail, Docs, Drive, and YouTube.",
   "icons": {
     "16": "icons/icon16.png",
@@ -23,15 +25,48 @@
     "*://*.google.com/*",
     "*://google.com/*",
     "*://*.youtube.com/*",
-    "*://youtube.com/*"
+    "*://youtube.com/*",
+    "*://*.google.co.uk/*",
+    "*://*.google.ca/*",
+    "*://*.google.com.au/*",
+    "*://*.google.co.in/*",
+    "*://*.google.co.jp/*",
+    "*://*.google.de/*",
+    "*://*.google.fr/*",
+    "*://*.google.es/*",
+    "*://*.google.it/*",
+    "*://*.google.nl/*",
+    "*://*.google.com.br/*",
+    "*://*.google.com.mx/*",
+    "*://*.google.co.kr/*",
+    "*://*.google.com.sg/*",
+    "*://*.google.com.hk/*",
+    "*://*.google.com.tw/*",
+    "*://*.google.co.za/*",
+    "*://*.google.ie/*",
+    "*://*.google.com.ar/*",
+    "*://*.google.pl/*",
+    "*://*.google.se/*",
+    "*://*.google.no/*",
+    "*://*.google.dk/*",
+    "*://*.google.fi/*",
+    "*://*.google.be/*",
+    "*://*.google.at/*",
+    "*://*.google.ch/*",
+    "*://*.google.pt/*",
+    "*://*.google.gr/*",
+    "*://*.google.cz/*",
+    "*://*.google.ae/*"
   ],
   "content_scripts": [
     {
       "matches": [
         "*://*.google.com/*",
         "*://google.com/*",
+        "*://m.google.com/*",
         "*://*.youtube.com/*",
         "*://youtube.com/*",
+        "*://m.youtube.com/*",
         "*://*.google.co.uk/*",
         "*://*.google.ca/*",
         "*://*.google.com.au/*",
@@ -73,8 +108,14 @@
   "incognito": "spanning",
   "browser_specific_settings": {
     "gecko": {
-      "id": "de-slopify@local",
-      "strict_min_version": "109.0"
+      "id": "de-slopify@heavenlycatcodes.github.io",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "120.0"
     }
   }
 }

@@ -275,3 +275,50 @@ h1 {
   color: var(--bone);
   font-weight: 600;
 }
+
+@media (max-width: 480px), (hover: none) and (pointer: coarse) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    padding: 18px 16px 20px;
+  }
+
+  .stamp,
+  .opt {
+    padding: 14px;
+  }
+
+  .track {
+    width: 52px;
+    height: 32px;
+  }
+
+  .track::after {
+    width: 26px;
+    height: 26px;
+  }
+
+  .switch input:checked + .track::after,
+  .opt-switch input:checked + .track::after {
+    transform: translateX(24px);
+  }
+
+  .opt-switch {
+    flex-basis: 52px;
+    width: 52px;
+    height: 32px;
+  }
+
+  .opt {
+    min-height: 56px;
+  }
+
+  .badge {
+    font-size: 13px;
+    padding: 6px 12px 6px 10px;
+  }
+}

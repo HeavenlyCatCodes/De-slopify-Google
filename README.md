@@ -10,8 +10,8 @@ It does **not** open or blank [gemini.google.com](https://gemini.google.com). Th
 
 | Browser | Zip |
 | --- | --- |
-| Chrome, Edge, Brave, Arc | [de-slopify-chrome-1.0.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.0.0/de-slopify-chrome-1.0.0.zip) |
-| Firefox | [de-slopify-firefox-1.0.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.0.0/de-slopify-firefox-1.0.0.zip) |
+| Chrome, Edge, Brave, Arc, Kiwi | [de-slopify-chrome-1.1.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.1.0/de-slopify-chrome-1.1.0.zip) |
+| Firefox (desktop and Android) | [de-slopify-firefox-1.1.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.1.0/de-slopify-firefox-1.1.0.zip) |
 
 ## What it removes
 
@@ -37,7 +37,7 @@ Comment buttons, emoji reactions, and normal search results stay.
 
 ## Install on Chrome, Edge, Brave, or Arc
 
-1. Download [de-slopify-chrome-1.0.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.0.0/de-slopify-chrome-1.0.0.zip).
+1. Download [de-slopify-chrome-1.1.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.1.0/de-slopify-chrome-1.1.0.zip).
 2. Unzip it to a folder you will keep.
 3. Open `chrome://extensions` (or `edge://extensions`).
 4. Turn on **Developer mode**.
@@ -49,12 +49,31 @@ Incognito: extension **Details** → **Allow in Incognito**.
 
 ## Install on Firefox
 
-1. Download [de-slopify-firefox-1.0.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.0.0/de-slopify-firefox-1.0.0.zip).
+1. Download [de-slopify-firefox-1.1.0.zip](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/download/v1.1.0/de-slopify-firefox-1.1.0.zip).
 2. Open `about:debugging#/runtime/this-firefox`.
 3. Click **Load Temporary Add-on…**.
 4. Choose the zip, or unzip it and choose `manifest.json`.
 
 Firefox drops temporary add-ons when you quit. Load the folder again after a restart.
+
+## Install on a phone
+
+Stock Chrome (Android and iOS) cannot load unpacked extensions. Use a browser that can.
+
+**Firefox for Android**
+
+1. Install [Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/).
+2. On a computer, open Firefox → `about:debugging` → **Enable USB devices**.
+3. On the phone, enable USB debugging and connect it.
+4. In desktop Firefox, under the phone, click **Load Temporary Add-on…** and choose `manifest.json` or the Firefox zip.
+
+**Kiwi, Lemur, or similar Chromium browsers**
+
+1. Download the Chrome zip from the [latest release](https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/latest).
+2. Unzip it on the phone.
+3. Open the browser’s extensions page, turn on developer mode, and load the unzipped folder.
+
+The popup is full-width on small screens, with larger ON/OFF switches. Mobile Google Search, Gmail in the browser, and YouTube in the browser are covered. The native Google and YouTube apps cannot run extensions.
 
 ## How to use it
 
@@ -76,7 +95,7 @@ cd De-slopify
 powershell -File scripts\pack.ps1
 ```
 
-Writes `dist/de-slopify-chrome-1.0.0.zip` and `dist/de-slopify-firefox-1.0.0.zip`.
+Writes `dist/de-slopify-chrome-1.1.0.zip` and `dist/de-slopify-firefox-1.1.0.zip`.
 
 ## Changelog
 

@@ -30,6 +30,7 @@
     "gemini side panel",
     "draft with gemini",
     "refine with gemini",
+    "help me reply",
   ];
 
   const SEARCH_SELECTORS = [
@@ -39,8 +40,13 @@
     '[data-async-type="folsrch"]',
     '[aria-label="AI Mode"]',
     '[aria-label="AI Overview"]',
+    '[aria-label="Use AI Mode"]',
+    '[aria-label="Search with AI Mode"]',
     'a[href*="udm=50"]',
     'a[href*="p=ai_overviews"]',
+    "#Odp5De",
+    ".M8OgIe",
+    ".hdzaWe",
   ];
 
   const WORKSPACE_SELECTORS = [
@@ -105,17 +111,23 @@
     return [...SKIP_HOSTS].some((item) => name === item || name.endsWith(`.${item}`));
   }
 
+  function isAppHost(name) {
+    return (
+      name.startsWith("mail.") ||
+      name.startsWith("docs.") ||
+      name.startsWith("drive.") ||
+      name.startsWith("calendar.") ||
+      name.startsWith("meet.") ||
+      name.startsWith("chat.") ||
+      name.startsWith("sheets.")
+    );
+  }
+
   function isSearchPage() {
     const name = host();
-    if (name === "google.com" || name.startsWith("google.") || name.endsWith(".google.com")) {
-      if (name.startsWith("mail.") || name.startsWith("docs.") || name.startsWith("drive.")) {
-        return false;
-      }
-      if (name.startsWith("calendar.") || name.startsWith("meet.") || name.startsWith("chat.")) {
-        return false;
-      }
-      return name === "google.com" || /^google\./.test(name) || name.startsWith("www.google.");
-    }
+    if (isAppHost(name)) return false;
+    if (name === "google.com" || name.startsWith("google.")) return true;
+    if (name === "m.google.com" || name.startsWith("m.google.")) return true;
     return false;
   }
 
@@ -184,14 +196,22 @@
     if (!hideSearch || !isSearchPage() || !document.body) return;
     hideBySelectors(SEARCH_SELECTORS, "dslop-hidden");
 
-    document.querySelectorAll('[role="listitem"], a, button, [role="tab"]').forEach((el) => {
-      const label = labelOf(el);
-      const text = textOf(el);
-      if (label === "ai mode" || text === "ai mode" || label.includes("ai overview")) {
-        const hostEl = el.closest('[role="listitem"], [role="tab"], div') || el;
-        hideNode(hostEl, "dslop-hidden");
-      }
-    });
+    document
+      .querySelectorAll('[role="listitem"], a, button, [role="tab"], [role="button"], g-raised-button')
+      .forEach((el) => {
+        const label = labelOf(el);
+        const text = textOf(el);
+        if (
+          label === "ai mode" ||
+          text === "ai mode" ||
+          text === "use ai mode" ||
+          label.includes("ai overview") ||
+          label.includes("ai mode")
+        ) {
+          const hostEl = el.closest('[role="listitem"], [role="tab"], a, button, div') || el;
+          hideNode(hostEl, "dslop-hidden");
+        }
+      });
 
     document.querySelectorAll("h1, h2, span[role='heading']").forEach((el) => {
       const text = textOf(el);
@@ -199,7 +219,7 @@
       let parent = el.parentElement;
       for (let i = 0; parent && i < 8; i += 1) {
         const rect = parent.getBoundingClientRect();
-        if (rect.height > 80 && rect.width > 240) {
+        if (rect.height > 72 && rect.width > 140) {
           hideNode(parent, "dslop-hidden");
           return;
         }
@@ -224,18 +244,22 @@
 
   function sweepYoutube() {
     if (!hideYoutube || !isYoutubePage() || !document.body) return;
-    document.querySelectorAll("button, [role='button'], ytd-button-renderer, yt-button-shape").forEach((el) => {
-      const label = labelOf(el);
-      const text = textOf(el);
-      if (
-        label.includes("gemini") ||
-        label.includes("ai-generated") ||
-        text.includes("ai-generated summary") ||
-        text.includes("ask gemini")
-      ) {
-        hideNode(el, "dslop-yt-hidden");
-      }
-    });
+    document
+      .querySelectorAll(
+        "button, [role='button'], ytd-button-renderer, yt-button-shape, ytm-button-renderer, c3-icon-button"
+      )
+      .forEach((el) => {
+        const label = labelOf(el);
+        const text = textOf(el);
+        if (
+          label.includes("gemini") ||
+          label.includes("ai-generated") ||
+          text.includes("ai-generated summary") ||
+          text.includes("ask gemini")
+        ) {
+          hideNode(el, "dslop-yt-hidden");
+        }
+      });
   }
 
   function sweep() {
@@ -284,6 +308,18 @@
     applyFlags();
     sweep();
     startObserver();
+    if (!start.pulse) {
+      let ticks = 0;
+      start.pulse = window.setInterval(() => {
+        if (!enabled) return;
+        sweep();
+        ticks += 1;
+        if (ticks > 25 && start.pulse) {
+          window.clearInterval(start.pulse);
+          start.pulse = window.setInterval(sweep, 2500);
+        }
+      }, 350);
+    }
   }
 
   storageGet({

@@ -1,0 +1,31 @@
+Firefox Add-on listing copy (paste into addons.mozilla.org)
+
+Name
+De-slopify
+
+Summary
+Remove Gemini buttons and AI Overviews from Google Search, Gmail, Docs, Drive, and YouTube.
+
+Description
+De-slopify hides Google’s AI chrome so Search, Gmail, Docs, Drive, and YouTube stay the product — not Gemini.
+
+It removes:
+- AI Overviews and the AI Mode tab on Google Search (desktop and mobile)
+- Ask Gemini, Help me write, summarize, and Refine in Gmail, Docs, Drive, Calendar, and Meet
+- Gemini chips and AI summaries on YouTube
+
+It does not change gemini.google.com. That site is the Gemini app.
+
+Use the toolbar popup to turn the add-on ON or OFF, or to disable Search, Workspace, or YouTube separately.
+
+Privacy
+De-slopify does not collect or transmit data. Settings stay on your device. Full policy: https://github.com/HeavenlyCatCodes/De-slopify-Google/blob/main/PRIVACY.md
+
+Categories
+Search Tools, Privacy & Security
+
+Support email / homepage
+https://github.com/HeavenlyCatCodes/De-slopify-Google
+
+License
+MIT

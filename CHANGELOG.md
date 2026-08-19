@@ -2,6 +2,21 @@
 
 All notable changes to De-slopify are listed here.
 
+## [1.1.0] — 2026-08-19
+
+### Added
+
+- Mobile Google Search (`m.google.com` and the phone SERP): hide AI Overviews and AI Mode chips.
+- Mobile YouTube (`m.youtube.com`) Gemini / AI-summary controls.
+- Touch-sized switches and a full-width popup for Firefox on Android.
+- Firefox for Android support (`gecko_android`).
+
+### Fixed
+
+- Phone search was not treated as Search, so AI Overviews could stay visible.
+
+[1.1.0]: https://github.com/HeavenlyCatCodes/De-slopify-Google/releases/tag/v1.1.0
+
 ## [1.0.0] — 2026-08-19
 
 ### Added

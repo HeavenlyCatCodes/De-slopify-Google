@@ -18,6 +18,9 @@ html:not(.dslop-off):not(.dslop-search-off) [role="navigation"] [role="listitem"
 html:not(.dslop-off):not(.dslop-search-off) a[href*="udm=50"],
 html:not(.dslop-off):not(.dslop-search-off) [aria-label="AI Mode"],
 html:not(.dslop-off):not(.dslop-search-off) [aria-label="AI Overview"],
+html:not(.dslop-off):not(.dslop-search-off) #Odp5De,
+html:not(.dslop-off):not(.dslop-search-off) .M8OgIe,
+html:not(.dslop-off):not(.dslop-search-off) .hdzaWe,
 html:not(.dslop-off):not(.dslop-search-off) .dslop-hidden {
   display: none !important;
   visibility: hidden !important;
@@ -54,4 +57,30 @@ html:not(.dslop-off):not(.dslop-youtube-off) ytd-info-panel-content-renderer:has
 html:not(.dslop-off):not(.dslop-youtube-off) [aria-label*="Gemini"],
 html:not(.dslop-off):not(.dslop-youtube-off) .dslop-yt-hidden {
   display: none !important;
+}
+
+/* Mobile Search — AI Overview is often the first card under the query. */
+@media (hover: none), (max-width: 720px) {
+  html:not(.dslop-off):not(.dslop-search-off)
+    h1
+    + div[data-async-context]
+    > div:first-child:not(:only-child):has(a[href*="p=ai_overviews"]),
+  html:not(.dslop-off):not(.dslop-search-off)
+    h1
+    + div[data-async-context]
+    > div:first-child:not(:only-child):has([data-async-type="folsrch"]),
+  html:not(.dslop-off):not(.dslop-search-off)
+    #rso
+    > div.MjjYud:has(a[href*="p=ai_overviews"]),
+  html:not(.dslop-off):not(.dslop-search-off) [jsname] > c-wiz:has(a[href*="p=ai_overviews"]),
+  html:not(.dslop-off):not(.dslop-search-off) [aria-label="Use AI Mode"],
+  html:not(.dslop-off):not(.dslop-search-off) [aria-label="Search with AI Mode"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 }
